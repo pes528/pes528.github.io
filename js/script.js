@@ -8,7 +8,7 @@ simplyCountdown('#cont', {
     words: { //words displayed into the countdown
         days: { singular: 'day', plural: 'DAYS' },
         hours: { singular: 'hour', plural: 'HOURS' },
-        minutes: { singular: 'minute', plural: 'MINUNTES' },
+        minutes: { singular: 'minute', plural: 'MINUTES' },
         seconds: { singular: 'second', plural: 'SECONDS' }
     },
     plural: true, //use plurals
@@ -34,3 +34,5 @@ simplyCountdown(myElement, { /* options */ });
 
 let multipleElements = document.querySelectorAll('.my-countdown');
 simplyCountdown(multipleElements, { /* options */ });
+
+
